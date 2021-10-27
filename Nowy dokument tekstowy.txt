@@ -1,0 +1,76 @@
+package pl.edu.uwm.wmii.kordowskijakub.laboratorium04;
+
+import java.util.Scanner;
+import java.lang.StringBuffer; //zadanie 1
+import java.io.*; // zadanie 2-3
+import java.io.FileReader; // zadanie 2-3
+import java.math.BigInteger; // zadanie 4-5
+import java.math.BigDecimal; // zadanie 4-5
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s = "ala ma kota";
+        char c = 'a';
+        String sub = "a";
+        String ss = "aaa";
+        String sss = "aa";
+//        System.out.println("W napisie '"+s+"' litera '"+c+"' wystepuje " + countChr(s,c)+" razy."); //1a
+//        System.out.println("W napisie '"+ss+"' napis '"+sss+"' wystepuje "+countSubStr(ss,sss)+" razy."); //1b
+//        String Mid = in.nextLine();
+//        System.out.println(middle(Mid));//1c
+//        String Rep = in.nextLine();
+//        System.out.println(repeat(Rep, 6));//1d
+//        for(int i=0;i<s.lastIndexOf(sub);i++){
+//            System.out.print(tab[i]+" ");
+//        }
+        int[] a = where(s,sub);
+    }
+
+    public static int countChr(String str, char c) {
+        int count = 0;
+        for(int i=0;i<str.length();i++)
+            if(str.charAt(i) == c) count += 1;
+        return count;
+    }
+    public static int countSubStr(String str, String subStr){
+        int count = 0;
+        int index = 0;
+        while((index = str.indexOf(subStr, index)) != -1){
+            count+=1;
+            index+=1;
+        }
+        return count;
+    }
+    public static String middle(String str){
+        StringBuffer mid = new StringBuffer();
+        int i = str.length()/2;
+        if(str.length()%2==0){
+            mid = mid.append(str.charAt(i-1)).append(str.charAt(i));
+        }
+        else{
+            mid = mid.append(str.charAt(i));
+        }
+        return mid.toString();
+    }
+    public static String repeat(String str, int n){
+        StringBuffer rep = new StringBuffer();
+        for(int i=0;i<n;i++){
+            rep.append(str);
+        }
+        return rep.toString();
+    }
+    public static int[] where(String str, String subStr){
+        int count = 0;
+        int index = 0;
+        while((index = str.indexOf(subStr, index)) != -1){
+            count+=1;
+            index+=1;
+        }
+        int[] tab = new int[count];
+        for(int i=0;i<str.lastIndexOf(subStr);i++){
+            tab[i] = str.indexOf(subStr,i);
+        }
+        return tab;
+        }
+}
