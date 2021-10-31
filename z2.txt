@@ -4,7 +4,7 @@ import java.io.FileReader; // zadanie 2-3
 import java.util.Scanner;
 import java.lang.StringBuffer;
 
-public class zad2 {
+public class z1 {
     public static void main(String[] args){
         String str = "filename.txt";
         char c = 'a';
