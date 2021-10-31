@@ -6,7 +6,7 @@ import java.io.*; // zadanie 2-3
 import java.io.FileReader; // zadanie 2-3
 import java.math.BigInteger; // zadanie 4-5
 import java.math.BigDecimal; // zadanie 4-5
-public class Main {
+public class z1 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
